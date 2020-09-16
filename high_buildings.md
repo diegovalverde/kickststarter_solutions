@@ -60,14 +60,14 @@ def isValidCombination(buildings, N, A, B, C):
     # check from left to right
     tallest_building = buildings[0]
     for building in buildings:
-        if tallest_building <= building:
+        if building >= tallest_building:
             tallest_building = building
             a += 1
 
     # check from right to left
     tallest_building = buildings[-1]
     for building in reversed(buildings):
-        if tallest_building <= building:
+        if building >= tallest_building:
             tallest_building = building
             b += 1
 
@@ -117,3 +117,6 @@ if __name__ == '__main__':
                 print(*ans, sep=',')
 
 ```
+
+However this does not have the expected performance.
+
